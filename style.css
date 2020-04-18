@@ -1,0 +1,19 @@
+.columns{
+    display: flex;
+    flex-wrap: wrap;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.columns__item{
+    border:1px solid rgb(155, 151, 151);
+    margin:20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+.addColumnButton{
+    max-height: 40px;
+}
