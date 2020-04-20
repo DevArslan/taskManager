@@ -30,7 +30,7 @@ body{
     padding:15px 5px;
     width: 100%;
     text-transform: uppercase;
-
+    cursor: all-scroll;
 }
 .addColumnButton{
     margin: 0 auto;
@@ -54,10 +54,14 @@ body{
     border:none;
 }
 .hideDraggableTask{
-    display: none;
+    visibility: hidden;
 }
 .highlightSelectedPlaceBottom{
     border-bottom: 2px solid #4bc7ec;
+}
+.highlightSelectedPlaceRight{
+    border-right: 2px solid #4bc7ec;
+    margin-right: 8px;
 }
 .task__name{
 
@@ -68,5 +72,14 @@ body{
     cursor: all-scroll;
 }
 .task{
+    z-index: 9999;
     cursor: all-scroll;
+}
+.delete{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+.deletedElement{
+    display: none;
 }
