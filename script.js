@@ -61,7 +61,7 @@ function main() {
         column.appendChild(columnContent)
         column.appendChild(addTaskButton)
         columns.appendChild(column)
-        columnEventListeners(columnContent)
+        columnEventListeners(column)
         column.setAttribute('data-id',await updateData())
         columnItems = document.querySelectorAll('.columns__item')
         return column
@@ -156,11 +156,12 @@ function main() {
     function dragDropDelete(event) {
         console.log('drop')
         try {
-            selectedTask.classList.add('deletedElement')
-            deleteTask(selectedTask)
-        } catch (error) {
             selectedColumn.classList.add('deletedElement')
             deleteColumn(selectedColumn)
+            
+        } catch (error) {
+            selectedTask.classList.add('deletedElement')
+            deleteTask(selectedTask)
         }
         
         event.stopPropagation()
@@ -170,6 +171,7 @@ function main() {
             this.classList.add('hideDraggableTask')
         }, 0);
         selectedTask = this
+        console.log(selectedTask)
         event.stopPropagation()
     }
     function dragStartColumn(event) {
@@ -177,6 +179,7 @@ function main() {
             this.classList.add('hideDraggableTask')
         }, 0);
         selectedColumn = this
+        console.log(selectedColumn)
         event.stopPropagation()
     }
     function dragEnd() {
